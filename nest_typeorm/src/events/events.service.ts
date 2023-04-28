@@ -93,7 +93,7 @@ export class EventsService {
 
   @Get('events')
   async getEventsWithWorkshops() {
-    return this.eventRepository.find({ relations: { workshops: true } });
+    return this.eventRepository.find({ relations: { workshops: true }, order: { workshops: { id: 'ASC' } } });
     // throw new Error('TODO task 1');
   }
 
