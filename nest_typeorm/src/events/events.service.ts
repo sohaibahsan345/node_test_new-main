@@ -167,9 +167,9 @@ export class EventsService {
   async getFutureEventWithWorkshops() {
     return this.eventRepository.find({
       relations: { workshops: true },
-      // where: {
-      //   'workshops.start': MoreThan(new Date())
-      // }
+      where: {
+        workshops: { start: MoreThan(new Date()) }
+      }
     });
     // throw new Error('TODO task 2');
   }

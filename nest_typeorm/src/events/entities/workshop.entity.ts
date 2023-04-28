@@ -7,10 +7,10 @@ export class Workshop {
   id: number;
 
   @Column({ type: 'datetime' })
-  start: string;
+  start: Date;
 
   @Column({ type: 'datetime' })
-  end: string;
+  end: Date;
 
   @Column({ type: 'integer', default: null })
   eventId: number;
